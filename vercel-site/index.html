@@ -1,0 +1,1113 @@
+﻿<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Para a Gaby — Capítulo 17</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👑</text></svg>" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --ink: #1a1420;
+    --paper: #fff8fb;
+    --pink: #ff4f8b;
+    --pink-deep: #c73368;
+    --gold: #e2b657;
+    --gold-deep: #a67c2d;
+    --lilac: #7d5bd6;
+    --cream: #fffdf8;
+    --shadow: 6px 6px 0 var(--ink);
+  }
+  * { box-sizing: border-box; }
+  [hidden] { display: none !important; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    color: var(--ink);
+    background:
+      radial-gradient(circle at 20% 10%, #ffe4f0 0, transparent 28%),
+      radial-gradient(circle at 90% 0%, #efe4ff 0, transparent 26%),
+      var(--paper);
+    font-family: "M PLUS Rounded 1c", "Segoe UI", sans-serif;
+    line-height: 1.5;
+  }
+  body::before {
+    content: "";
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    opacity: 0.18;
+    background-image: radial-gradient(#1a1420 0.6px, transparent 0.7px);
+    background-size: 7px 7px;
+    z-index: 0;
+  }
+  img { max-width: 100%; }
+  button, input { font-family: inherit; }
+  a { color: inherit; }
+
+  #gate {
+    position: fixed;
+    inset: 0;
+    z-index: 40;
+    display: grid;
+    place-items: center;
+    padding: 24px;
+    background:
+      radial-gradient(circle at 50% 120%, #ffd0e4, transparent 46%),
+      linear-gradient(180deg, #2a1840 0%, #4a2158 48%, #7a335f 100%);
+    color: #fff8fb;
+  }
+  #gate.bye { animation: fadeOut 0.45s ease forwards; }
+  .seal {
+    width: min(460px, 100%);
+    background: #fff8fb;
+    color: var(--ink);
+    border: 4px solid #1a1420;
+    box-shadow: 10px 10px 0 #ffd56a;
+    padding: 28px 26px 24px;
+    position: relative;
+  }
+  .seal h1 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-weight: 700;
+    font-size: clamp(2rem, 6vw, 3rem);
+    line-height: 1.05;
+    margin: 8px 0 6px;
+  }
+  .kicker {
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 800;
+    color: var(--pink-deep);
+  }
+  .seal p { margin: 0 0 14px; }
+  .seal form { display: flex; gap: 8px; flex-wrap: wrap; }
+  .seal input {
+    flex: 1 1 180px;
+    border: 3px solid var(--ink);
+    padding: 12px 14px;
+    font-size: 1rem;
+    background: #fff;
+  }
+  .seal button, .btn {
+    border: 3px solid var(--ink);
+    background: var(--pink);
+    color: white;
+    font-weight: 800;
+    padding: 12px 16px;
+    cursor: pointer;
+    box-shadow: 4px 4px 0 var(--ink);
+  }
+  .seal button:hover, .btn:hover { transform: translate(-1px, -1px); }
+  .hint { font-size: 0.92rem; color: #5c4a58; }
+  .err { min-height: 1.3em; color: var(--pink-deep); font-weight: 700; }
+  .shake { animation: shake 0.35s linear; }
+  @keyframes shake {
+    25% { transform: translateX(-6px); }
+    50% { transform: translateX(6px); }
+    75% { transform: translateX(-4px); }
+  }
+  @keyframes fadeOut { to { opacity: 0; visibility: hidden; } }
+
+  #book { position: relative; z-index: 1; }
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    display: flex;
+    gap: 8px 14px;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding: 10px 16px;
+    background: #fffdf8;
+    border-bottom: 4px solid var(--ink);
+  }
+  .brand {
+    font-weight: 800;
+    white-space: nowrap;
+  }
+  .nav nav {
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex: 1 1 100%;
+  }
+  .nav a {
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.86rem;
+    border: 2px solid var(--ink);
+    padding: 4px 8px;
+    background: #fff;
+  }
+  .nav a:hover { background: #ffe4f1; }
+
+  .wrap { width: min(1080px, calc(100% - 32px)); margin: 0 auto; }
+  section { padding: 54px 0; scroll-margin-top: 92px; }
+  .chapter-no {
+    display: inline-block;
+    border: 3px solid var(--ink);
+    background: var(--gold);
+    font-weight: 800;
+    padding: 2px 8px;
+    margin-bottom: 8px;
+  }
+  h2 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(1.8rem, 4vw, 2.8rem);
+    line-height: 1.1;
+    margin: 0 0 10px;
+  }
+  .lede { font-size: 1.08rem; max-width: 62ch; }
+
+  .hero {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 28px;
+    align-items: center;
+  }
+  .poster {
+    border: 4px solid var(--ink);
+    box-shadow: var(--shadow);
+    background: #fff;
+    padding: 10px;
+    transform: rotate(1.2deg);
+  }
+  .poster img { width: 100%; height: 460px; object-fit: cover; object-position: center 20%; display: block; }
+  .poster figcaption { font-weight: 700; padding: 8px 4px 2px; }
+  .flash {
+    margin-top: 14px;
+    display: grid;
+    grid-template-columns: 92px 1fr;
+    gap: 10px;
+    align-items: center;
+    border: 3px solid var(--ink);
+    background: #fff;
+    padding: 8px;
+    box-shadow: 4px 4px 0 var(--ink);
+  }
+  .flash img { width: 92px; height: 92px; object-fit: cover; }
+
+  #jogo { background: linear-gradient(180deg, transparent, #ffe8f3 30%, transparent); }
+  .stage {
+    position: relative;
+    border: 4px solid var(--ink);
+    box-shadow: var(--shadow);
+    background: #1a1420;
+    height: min(72vh, 640px);
+    min-height: 420px;
+    overflow: hidden;
+  }
+  #view { width: 100%; height: 100%; display: block; touch-action: none; }
+  .hud {
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    right: 12px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    pointer-events: none;
+  }
+  .bubble, .say {
+    background: #fff;
+    border: 3px solid var(--ink);
+    border-radius: 16px;
+    padding: 8px 12px;
+    font-weight: 700;
+    position: relative;
+  }
+  .hud .bubble { max-width: 46ch; }
+  .crown-count {
+    background: var(--gold);
+    border: 3px solid var(--ink);
+    padding: 8px 12px;
+    font-weight: 800;
+    align-self: flex-start;
+  }
+  .dpad {
+    position: absolute;
+    right: 14px;
+    bottom: 14px;
+    display: grid;
+    grid-template-columns: 54px 54px 54px;
+    grid-template-rows: 48px 48px 48px;
+    gap: 4px;
+  }
+  .dpad button {
+    border: 3px solid #fff;
+    background: rgba(26, 20, 32, 0.72);
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 800;
+    cursor: pointer;
+  }
+  .dpad button:nth-child(1) { grid-column: 2; grid-row: 1; }
+  .dpad button:nth-child(2) { grid-column: 1; grid-row: 2; }
+  .dpad button:nth-child(3) { grid-column: 3; grid-row: 2; }
+  .dpad button:nth-child(4) { grid-column: 2; grid-row: 3; }
+  #win {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background: rgba(26, 20, 32, 0.55);
+    padding: 16px;
+  }
+  #win .card {
+    background: #fffdf8;
+    border: 4px solid var(--ink);
+    box-shadow: var(--shadow);
+    padding: 22px;
+    max-width: 460px;
+    text-align: center;
+  }
+  .help { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; align-items: center; margin-top: 10px; }
+  .ghost {
+    background: #fff;
+    border: 3px solid var(--ink);
+    font-weight: 800;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+
+  .filters { display: flex; gap: 8px; flex-wrap: wrap; margin: 14px 0 18px; }
+  .filters button[aria-pressed="true"] { background: var(--ink); color: #fff; }
+  .album {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 18px;
+  }
+  .vol {
+    grid-column: 1 / -1;
+    margin: 12px 0 0;
+    font-family: "Playfair Display", Georgia, serif;
+    border-bottom: 3px solid var(--ink);
+    padding-bottom: 4px;
+  }
+  .panel {
+    background: #fff;
+    border: 4px solid var(--ink);
+    box-shadow: var(--shadow);
+    padding: 8px 8px 12px;
+    cursor: zoom-in;
+  }
+  .panel.wide { grid-column: span 2; }
+  .panel img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+    background: #f6e7ee;
+  }
+  .panel.wide img { height: 380px; }
+  .say { margin-top: 10px; font-weight: 650; }
+  .say::before {
+    content: "";
+    position: absolute;
+    top: -11px;
+    left: 18px;
+    border: 6px solid transparent;
+    border-bottom-color: var(--ink);
+  }
+  .who { display: block; font-size: 0.75rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--pink-deep); margin-bottom: 2px; }
+
+  .letter {
+    background: #fffdf8;
+    border: 4px solid var(--ink);
+    box-shadow: var(--shadow);
+    padding: clamp(18px, 4vw, 42px);
+    max-width: 760px;
+  }
+  .letter p { font-size: 1.08rem; }
+  .sign {
+    font-family: "Playfair Display", Georgia, serif;
+    font-style: italic;
+    font-size: 1.5rem;
+    margin-top: 8px;
+  }
+
+  .grid-17 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+    gap: 14px;
+  }
+  .reason, .vale {
+    border: 3px solid var(--ink);
+    background: #fff;
+    min-height: 150px;
+    box-shadow: 4px 4px 0 var(--ink);
+    padding: 14px;
+  }
+  .reason { cursor: pointer; }
+  .num {
+    display: inline-grid;
+    place-items: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--gold);
+    border: 2px solid var(--ink);
+    font-weight: 800;
+  }
+  .reason .back { display: none; font-weight: 700; }
+  .reason.open .front { display: none; }
+  .reason.open .back { display: block; }
+  .reason.open { background: #fff1c9; }
+  .vale.done { background: #f3e9ff; }
+  .stamp {
+    display: inline-block;
+    margin-top: 8px;
+    border: 2px solid var(--pink-deep);
+    color: var(--pink-deep);
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    transform: rotate(-6deg);
+    padding: 2px 6px;
+  }
+
+  #final {
+    min-height: 88vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    background:
+      radial-gradient(circle at 50% 40%, #ffe7f3, transparent 55%),
+      linear-gradient(180deg, #2a1840, #5a2348 70%, #ffd0e2);
+    color: #fff8fb;
+    border-top: 4px solid var(--ink);
+  }
+  #final h2 { font-size: clamp(2.2rem, 6vw, 4.2rem); color: #fff; }
+  #final .chapter-no { background: var(--gold); color: var(--ink); }
+  #final p { font-size: 1.2rem; max-width: 40ch; margin-inline: auto; }
+
+  #light {
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    background: rgba(16, 10, 20, 0.86);
+    display: grid;
+    place-items: center;
+    padding: 18px;
+  }
+  #light figure {
+    width: min(920px, 100%);
+    margin: 0;
+  }
+  #light img { max-height: 72vh; width: 100%; object-fit: contain; background: #111; border: 4px solid #fff; }
+  #light .say { color: var(--ink); }
+  #light button.close {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: #fff;
+    border: 3px solid var(--ink);
+    font-weight: 800;
+    padding: 8px 12px;
+    cursor: pointer;
+  }
+
+  footer {
+    padding: 18px;
+    text-align: center;
+    font-weight: 700;
+    border-top: 4px solid var(--ink);
+    background: #fff;
+  }
+  @media (max-width: 800px) {
+    .hero, .panel.wide { grid-template-columns: 1fr; }
+    .panel.wide { grid-column: span 1; }
+    .poster img, .panel.wide img { height: 320px; }
+    .nav { flex-direction: column; align-items: stretch; }
+    .nav nav { justify-content: flex-start; }
+    .dpad { right: 8px; bottom: 8px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .poster { transform: none; }
+  }
+</style>
+</head>
+<body>
+  <div id="gate">
+    <div class="seal" id="seal">
+      <div class="kicker">Livro exclusivo · 8 de outubro</div>
+      <h1>Só a Gaby entra.</h1>
+      <p>Este reino foi feito para uma pessoa. Sem plateia, sem partilha. Se és tu, a chave é o teu título aqui.</p>
+      <form id="key-form">
+        <input id="key" type="password" autocomplete="off" placeholder="a senha do reino" aria-label="Senha" />
+        <button type="submit">Abrir</button>
+      </form>
+      <p class="err" id="err" role="status"></p>
+      <p class="hint">Dica do Papito: o teu título neste reino, em minúsculas.</p>
+    </div>
+  </div>
+
+  <div id="book" hidden>
+    <div class="nav">
+      <div class="brand">👑 Reino da Gaby</div>
+      <nav>
+        <a href="#capa">Capa</a>
+        <a href="#jogo">Jardim 3D</a>
+        <a href="#album">Álbum</a>
+        <a href="#carta">Carta</a>
+        <a href="#razoes">17 razões</a>
+        <a href="#vales">Vales</a>
+        <a href="#final">Cap. 17</a>
+      </nav>
+    </div>
+
+    <section id="capa">
+      <div class="wrap hero">
+        <div>
+          <div class="chapter-no">Capítulo 01</div>
+          <h2>O dia em que o reino parou por ti.</h2>
+          <p class="lede">Gaby, hoje fazes 17. Forte e sensível, estudiosa, determinada, talentosa. Este livro é atenção, conversa e presente — um mangá em que a princesa és tu, e o narrador é o teu Papito.</p>
+          <p class="lede">No jardim há um jogo a sério: anda, apanha as 17 coroas e abre o capítulo que eu escrevi só para ti. No álbum estão todas as tuas fotos, com a história que eu vejo em cada uma.</p>
+          <p><a class="btn" href="#jogo" style="display:inline-block;text-decoration:none;">Entrar no jardim</a></p>
+        </div>
+        <div>
+          <figure class="poster">
+            <img src="zt.jpeg" alt="Gaby de vestido dourado com um ramo vermelho" />
+            <figcaption>Painel de capa — a princesa do corredor dourado.</figcaption>
+          </figure>
+          <div class="flash">
+            <img src="ddgdgdg.jpeg" alt="Gaby bebé deitada numa manta colorida" />
+            <div><b>Há muitos capítulos atrás.</b><br>A mesma pessoa. O mesmo brilho. Eu amo as duas.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="jogo">
+      <div class="wrap">
+        <div class="chapter-no">Capítulo 02 · jogo</div>
+        <h2>Jardim da princesa</h2>
+        <p class="lede">Um castelo rosa, cerejeiras e 17 coroas escondidas no jardim. Cada coroa é uma razão. Quando juntares as dezassete, o capítulo especial abre.</p>
+        <div class="stage" id="stage">
+          <canvas id="view"></canvas>
+          <div class="hud">
+            <div class="bubble" id="game-line">Anda pelo jardim e apanha as coroas douradas.</div>
+            <div class="crown-count">Coroas <span id="count">0</span>/17</div>
+          </div>
+          <div class="dpad" id="dpad" aria-label="Comandos">
+            <button type="button" data-k="arrowup" aria-label="Frente">↑</button>
+            <button type="button" data-k="arrowleft" aria-label="Esquerda">←</button>
+            <button type="button" data-k="arrowright" aria-label="Direita">→</button>
+            <button type="button" data-k="arrowdown" aria-label="Trás">↓</button>
+          </div>
+          <div id="win" hidden>
+            <div class="card">
+              <div class="chapter-no">Coroa completa</div>
+              <h3>Encontrei-te em cada canto.</h3>
+              <p>As 17 coroas são tuas, Gaby. Eu amo-te. O capítulo especial já está aberto.</p>
+              <a class="btn" href="#carta" style="display:inline-block;text-decoration:none;">Ler a carta</a>
+            </div>
+          </div>
+        </div>
+        <div class="help">
+          <span>Teclado: WASD ou setas. No telemóvel: o comando à direita. Aproxima-te de uma coroa para a apanhar.</span>
+          <button class="ghost" type="button" id="reset-game">Recomeçar o jardim</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="album">
+      <div class="wrap">
+        <div class="chapter-no">Capítulo 03 · álbum</div>
+        <h2>Todos os painéis</h2>
+        <p class="lede">Quarenta e oito fotos. Nenhuma ficou de fora. Clica num painel para o ver em grande. Os balões são a minha voz.</p>
+        <div class="filters" id="filters">
+          <button type="button" data-f="todas" aria-pressed="true">Todas</button>
+          <button type="button" data-f="pequena">A pequenina</button>
+          <button type="button" data-f="estudo">Estudiosa</button>
+          <button type="button" data-f="dia">O dia a dia</button>
+          <button type="button" data-f="princesa">Princesa</button>
+        </div>
+        <div class="album" id="grid"></div>
+      </div>
+    </section>
+
+    <section id="carta">
+      <div class="wrap">
+        <div class="chapter-no">Capítulo especial</div>
+        <h2>Carta do Papito</h2>
+        <article class="letter">
+          <p>Gaby,</p>
+          <p>Se este site existe, é porque eu queria um lugar que fosse só teu. Sem plateia. Sem ninguém a ocupar o espaço que é teu. A senha não é um jogo de escondidas: é a forma de dizer que aqui só entras tu.</p>
+          <p>Tu és forte. Eu vejo isso na farda amarela, na forma como estudas, em como olhas em frente quando o dia pesa. E és sensível — e isso não te diminui. É a parte que me faz escolher as palavras e ficar.</p>
+          <p>Hoje, 8 de outubro, fazes 17. Dezassete anos de uma pessoa estudiosa, determinada e talentosa. Gostas de atenção, de presentes, de conversa, de anime e de mangá, e precisas de te sentir única. Então lê isto devagar, porque é verdade:</p>
+          <p><b>Tu és única para mim.</b></p>
+          <p>Não é frase de balão. É a razão deste reino, destas fotos todas, destas 17 coroas, destes vales. Eu amo a menina da bacia vermelha e a princesa do vestido dourado, porque são a mesma pessoa. Amo quando brincas com a língua de fora e quando ficas séria contra a parede amarela. Amo o ramo vermelho colado ao peito e o sorriso pequeno no carro.</p>
+          <p>Eu amo-te, Gaby. O melhor ainda está por vir, e eu quero ler esse capítulo ao teu lado.</p>
+          <p class="sign">O teu Papito</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="razoes">
+      <div class="wrap">
+        <div class="chapter-no">Capítulo 16</div>
+        <h2>17 razões</h2>
+        <p class="lede">Toca em cada carta. São presentes em palavras — uma por cada ano.</p>
+        <div class="grid-17" id="reasons"></div>
+      </div>
+    </section>
+
+    <section id="vales">
+      <div class="wrap">
+        <div class="chapter-no">Presente</div>
+        <h2>Vales para resgatares</h2>
+        <p class="lede">Cada vale é uma promessa minha. Quando quiseres, carrega em resgatar e mostra-mo. Fica guardado neste telemóvel.</p>
+        <div class="grid-17" id="vales"></div>
+      </div>
+    </section>
+
+    <section id="final">
+      <div>
+        <div class="chapter-no">Capítulo 17</div>
+        <h2>O melhor ainda está por vir.</h2>
+        <p>Gaby, os 17 anos não fecham a história. Abrem o arco seguinte. Eu estou aqui — atento, teu, sem dividir este lugar.</p>
+        <p>Eu amo-te.</p>
+        <p class="sign">Papito</p>
+      </div>
+    </section>
+    <footer>Feito só para a Gaby · 8 de outubro · um reino, uma princesa.</footer>
+  </div>
+
+  <div id="light" hidden>
+    <button class="close" type="button" id="light-x">Fechar</button>
+    <figure>
+      <img id="light-img" alt="" />
+      <div class="say" id="light-say"></div>
+    </figure>
+  </div>
+
+<script src="three.min.js"></script>
+<script>
+const PASS = "princesa";
+
+const photos = [
+  { src: "ddgdgdg.jpeg", cat: "pequena", vol: "Prólogo — a princesa pequenina", text: "O primeiro painel. Deitada na manta cor-de-rosa, já a olhar o mundo de lado. Eu amo esta página." },
+  { src: "dgedf.jpeg", cat: "pequena", vol: "Prólogo — a princesa pequenina", text: "A dormir na bacia vermelha, embrulhada de branco. O reino inteiro cabia nesse sono." },
+  { src: "fggggg.jpeg", cat: "pequena", vol: "Prólogo — a princesa pequenina", text: "Olhos grandes, dois coques, cama de flores. A princesa antes da coroa — e já comandavas a cena." },
+  { src: "WhatsApp Image 2026-10-08 at 10.01.16 PM.jpeg", cat: "pequena", vol: "Prólogo — a princesa pequenina", text: "No sofá, comando na mão, meias brancas. Como se já mandasses no reino, pequenina." },
+  { src: ".n..jpeg", cat: "estudo", vol: "Volume I — a estudiosa", wide: true, text: "Farda, mochila, caminho da escola. É esta determinação que eu admiro em silêncio." },
+  { src: "df.jpeg", cat: "estudo", vol: "Volume I — a estudiosa", text: "Antes da aula, um segundo só teu. Eu guardo esses segundos como quem guarda um presente." },
+  { src: "eeeee.jpeg", cat: "estudo", vol: "Volume I — a estudiosa", text: "Meio-sorriso de quem está a pensar na resposta certa. Estudiosa até no olhar." },
+  { src: "ffffezr.jpeg", cat: "estudo", vol: "Volume I — a estudiosa", text: "Contra o céu, de farda amarela. O esforço fica-te bem — e o céu também." },
+  { src: "WhatsApp Image 2026-10-08 at 7.00.42 PM.jpeg", cat: "estudo", vol: "Volume I — a estudiosa", text: "Telemóvel verde, colarinho vermelho. A rotina que me deixa orgulhoso de ti." },
+  { src: "bbbbbbbb.jpeg", cat: "dia", vol: "Volume II — o dia a dia que eu amo", text: "Parede amarela, cara séria, óculos finos. Forte, direta, inteira. É assim que eu te conheço." },
+  { src: "bbbddd.jpeg", cat: "dia", vol: "Volume II — o dia a dia que eu amo", text: "Cabelo molhado, sorriso pequeno, toalha nos ombros. Até no dia comum és a minha favorita." },
+  { src: "bbffg.jpeg", cat: "dia", vol: "Volume II — o dia a dia que eu amo", text: "A versão brincalhona. Forte por fora, leve quando confias. Essa língua de fora também é amor." },
+  { src: "dddvb.jpeg", cat: "dia", vol: "Volume II — o dia a dia que eu amo", text: "Dois coques e esta cara. Só tu transformas um instante banal em desenho." },
+  { src: "fffffdd.jpeg", cat: "dia", vol: "Volume II — o dia a dia que eu amo", text: "Cabelo solto, toalha, sorriso calmo. Linda sem precisar de cenário." },
+  { src: "ffgv.jpeg", cat: "dia", vol: "Volume II — o dia a dia que eu amo", text: "Touca e beicinho. Amo a versão caseira, a que não posa para mais ninguém." },
+  { src: "bbbb.jpeg", cat: "dia", vol: "Volume II — o dia a dia que eu amo", text: "A preto e branco, este sorriso parece página de mangá. Eu fico preso nele." },
+  { src: "fffffffffffffffffff.jpeg", cat: "dia", vol: "Volume II — o dia a dia que eu amo", text: "Olhos fechados, sorriso secreto. Queria ser a razão desse momento quieto." },
+  { src: "cccccc.jpeg", cat: "dia", vol: "Volume II — o dia a dia que eu amo", text: "Piscadela e beijinho, tranças compridas. O painel em que o coração acelera." },
+  { src: "fddfdfd.jpeg", cat: "dia", vol: "Volume II — o dia a dia que eu amo", text: "Sorriso aberto à janela, céu lilás atrás. É a luz que eu escolho." },
+  { src: "ggs.jpeg", cat: "dia", vol: "Volume II — o dia a dia que eu amo", text: "Queixo na mão. Pareces pensar o próximo capítulo — e eu quero ouvi-lo." },
+  { src: "rtg.jpeg", cat: "dia", vol: "Volume II — o dia a dia que eu amo", text: "Mão nas tranças, olhar firme e doce. Forte e sensível, as duas coisas de uma vez." },
+  { src: "rrrrr.jpeg", cat: "dia", vol: "Volume II — o dia a dia que eu amo", text: "A camisola fala de sonho, desejo e coração. Eu assino os três com o teu nome." },
+  { src: "vvd.jpeg", cat: "dia", vol: "Volume II — o dia a dia que eu amo", text: "Mão no cabelo, argolas, calma. Elegante sem pedir plateia. Eu sou a tua." },
+  { src: "ddd.jpeg", cat: "dia", vol: "Volume II — o dia a dia que eu amo", text: "Mão no rosto, olhar calmo. Sensível, sem pedir licença. Eu fico." },
+  { src: "dddd.jpeg", cat: "dia", vol: "Volume II — o dia a dia que eu amo", text: "Sinal de paz e sorriso de quem já ganhou o capítulo. Flores azuis ficam-te bem." },
+  { src: "jjjjj.jpeg", cat: "dia", vol: "Volume II — o dia a dia que eu amo", text: "Sorriso largo. Tens talento até para seres feliz numa foto de corredor." },
+  { src: "vfdff.jpeg", cat: "dia", vol: "Volume II — o dia a dia que eu amo", text: "Mais um sorriso que me desarma. Contigo é sempre a primeira vez." },
+  { src: "gd.jpeg", cat: "dia", vol: "Volume II — o dia a dia que eu amo", text: "Luz baixa, dedo a apontar, como quem diz: olha para mim. Eu já estava a olhar." },
+  { src: "dfv.jpeg", cat: "dia", vol: "Volume II — o dia a dia que eu amo", text: "Um detalhe de perto. Há coisas que só se veem quando se presta atenção — e eu presto." },
+  { src: "n.n..jpeg", cat: "dia", vol: "Volume II — o dia a dia que eu amo", text: "Língua de fora, óculos de ouro. A Gaby que não se leva demasiado a sério. Eu amo isso." },
+  { src: "rtt.jpeg", cat: "dia", vol: "Volume II — o dia a dia que eu amo", text: "Outra vez essa cara. Eu não me canso. Nunca me vou cansar." },
+  { src: "qqzqz.jpeg", cat: "dia", vol: "Volume II — o dia a dia que eu amo", text: "Beicinho de perto, unhas cuidadas. Atenção total: é isto que mereces." },
+  { src: "zzzzz.jpeg", cat: "dia", vol: "Volume II — o dia a dia que eu amo", text: "Mão na boca, olhos por cima dos dedos. O segredo que eu já sei: eu amo-te." },
+  { src: "WhatsApp Image 2026-10-08 at 7.00.43 PMdd.jpeg", cat: "dia", vol: "Volume II — o dia a dia que eu amo", text: "Queixo na mão, flores na alça. Princesa até no detalhe pequeno." },
+  { src: "gggg.jpeg", cat: "dia", vol: "Volume II — o dia a dia que eu amo", text: "Espelho, orquídeas e camisola menta. Delicada e inteira ao mesmo tempo." },
+  { src: "fdfdfdfd.jpeg", cat: "dia", vol: "Volume II — o dia a dia que eu amo", text: "No quarto, a olhar de lado. Conversava contigo horas só com esse olhar." },
+  { src: "ddde.jpeg", cat: "dia", vol: "Volume II — o dia a dia que eu amo", text: "No carro, mão perto do rosto. Eu iria contigo até ao fim da estrada." },
+  { src: "fdfdfdfdfdfd.jpeg", cat: "dia", vol: "Volume II — o dia a dia que eu amo", text: "Sem óculos, cinto posto, sorriso doce. A minha paz tem a tua cara." },
+  { src: "WhatsApp Image 2026-10-08 at 7.00.42 PMd.jpeg", cat: "dia", vol: "Volume II — o dia a dia que eu amo", text: "A cidade atrás do vidro, tu à frente. O melhor da paisagem és tu." },
+  { src: "lllll.jpeg", cat: "dia", vol: "Volume II — o dia a dia que eu amo", wide: true, text: "Hoodie, mala e cara de quem vai conquistar o dia. Determinada até a brincar." },
+  { src: "vvdv.jpeg", cat: "dia", vol: "Volume II — o dia a dia que eu amo", wide: true, text: "Mochilas e a frase no saco: you are my sunshine. Pois és. A minha." },
+  { src: "hhhjj.jpeg", cat: "princesa", vol: "Volume III — noite de princesa", wide: true, text: "Vestido dourado, corredor inteiro. Não precisas de palácio. O palácio é onde tu estás." },
+  { src: "ry.jpeg", cat: "princesa", vol: "Volume III — noite de princesa", wide: true, text: "Ao fundo do corredor, a brilhar. O meu lugar favorito é esse: onde tu estás." },
+  { src: "kkkk.jpeg", cat: "princesa", vol: "Volume III — noite de princesa", wide: true, text: "Estampado laranja e preto, coroa de tranças. Raiz e elegância no mesmo vestido." },
+  { src: "ccc.jpeg", cat: "princesa", vol: "Volume III — noite de princesa", wide: true, text: "Ramo vermelho, saia de cetim. O corredor virou passadeira, e tu a única convidada que importa." },
+  { src: "zt.jpeg", cat: "princesa", vol: "Volume III — noite de princesa", wide: true, text: "Ramo ao peito, sorriso verdadeiro. Nesse dia o mundo era teu. Para mim, continua a ser." },
+  { src: "sss.jpeg", cat: "princesa", vol: "Volume III — noite de princesa", text: "Janela clara, ramo e beijinho. Um painel que eu releria mil vezes." },
+  { src: "fffd.jpeg", cat: "princesa", vol: "Volume III — noite de princesa", text: "Rosa vermelha colada a ti. Se o amor tivesse cor, era esta." }
+];
+
+const reasons = [
+  "Porque a tua força não apaga a tua sensibilidade.",
+  "Porque estudas como quem sabe para onde vai.",
+  "Porque quando decides, vais até ao fim.",
+  "Porque tens talento no olhar, no estilo, na forma de existir.",
+  "Porque mereces atenção inteira, não migalhas.",
+  "Porque um presente na tua mão muda a luz do dia.",
+  "Porque conversar contigo é o meu capítulo favorito.",
+  "Porque precisas de te sentir única — e és.",
+  "Porque o teu mundo de anime e mangá é um lugar onde eu quero sentar-me ao teu lado.",
+  "Porque o teu sorriso a sério e o teu sorriso a brincar são os dois meus.",
+  "Porque a menina da bacia vermelha cresceu e continuou verdadeira.",
+  "Porque a farda amarela mostra o quanto te esforças.",
+  "Porque de vestido dourado pareces o que já és todos os dias.",
+  "Porque me deixas ser o teu Papito.",
+  "Porque o cuidado que tens com as tuas pessoas é amor, e eu respeito isso.",
+  "Porque hoje, 8 de outubro, o reino faz 17 anos contigo.",
+  "Porque eu amo-te, Gaby. Sem dividir este lugar com mais ninguém."
+];
+
+const crownLines = [
+  "Pela tua força.",
+  "Pela tua sensibilidade.",
+  "Porque estudas a sério.",
+  "Porque não desistes.",
+  "Porque tens talento.",
+  "Porque a minha atenção é tua.",
+  "Porque mereces presentes.",
+  "Porque conversar contigo é casa.",
+  "Porque és única.",
+  "Porque o teu sorriso é o meu mangá.",
+  "Porque cresceste e continuas tu.",
+  "Porque hoje fazes 17.",
+  "Porque confias em mim.",
+  "Porque este reino é só teu.",
+  "Porque eu fico.",
+  "Porque o melhor ainda vem.",
+  "Porque eu amo-te, Gaby."
+];
+
+const vales = [
+  "Uma conversa longa, só nossa, sem pressa.",
+  "Um presente escolhido a pensar em ti.",
+  "Uma tarde de mangá, eu ao teu lado.",
+  "Um jantar que tu escolhes.",
+  "Um passeio só teu e meu.",
+  "Um elogio por escrito sempre que precisares.",
+  "Quando chamares, eu apareço.",
+  "Uma surpresa sem data marcada.",
+  "Ajuda nos estudos, sem te apressar.",
+  "Uma foto nossa, quando quiseres.",
+  "Tu escolhes o anime. Eu fico até ao fim.",
+  "Um dia em que tudo gira à tua volta.",
+  "Um abraço demorado.",
+  "Uma carta em papel, escrita à mão.",
+  "Eu fico, mesmo quando não houver palavras.",
+  "Um desejo teu, dentro do que eu puder cumprir.",
+  "A certeza, dita outra vez, de que és única para mim."
+];
+
+function photoUrl(name) {
+  return encodeURIComponent(name);
+}
+
+const gate = document.getElementById("gate");
+const book = document.getElementById("book");
+const form = document.getElementById("key-form");
+const keyInput = document.getElementById("key");
+const err = document.getElementById("err");
+const seal = document.getElementById("seal");
+
+function openBook() {
+  sessionStorage.setItem("gaby-reino", "1");
+  book.hidden = false;
+  gate.classList.add("bye");
+  setTimeout(() => { gate.remove(); startGame(); }, 420);
+}
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const value = keyInput.value.trim().toLowerCase();
+  if (value === PASS) {
+    err.textContent = "";
+    openBook();
+  } else {
+    err.textContent = "Esta chave não abre o teu livro.";
+    seal.classList.remove("shake");
+    void seal.offsetWidth;
+    seal.classList.add("shake");
+  }
+});
+
+if (sessionStorage.getItem("gaby-reino") === "1") openBook();
+
+const grid = document.getElementById("grid");
+function renderAlbum(filter) {
+  grid.innerHTML = "";
+  let last = "";
+  photos.forEach((p, i) => {
+    if (filter !== "todas" && p.cat !== filter) return;
+    if (p.vol !== last) {
+      last = p.vol;
+      const h = document.createElement("h3");
+      h.className = "vol";
+      h.textContent = p.vol;
+      grid.appendChild(h);
+    }
+    const card = document.createElement("article");
+    card.className = "panel" + (p.wide ? " wide" : "");
+    card.innerHTML = '<img alt="Foto da Gaby" loading="lazy" /><div class="say"><span class="who">Papito</span></div>';
+    card.querySelector("img").src = photoUrl(p.src);
+    card.querySelector(".say").append(document.createTextNode(p.text));
+    card.addEventListener("click", () => openLight(p));
+    grid.appendChild(card);
+  });
+}
+renderAlbum("todas");
+
+document.getElementById("filters").addEventListener("click", (e) => {
+  const btn = e.target.closest("button");
+  if (!btn) return;
+  document.querySelectorAll("#filters button").forEach((b) => b.setAttribute("aria-pressed", "false"));
+  btn.setAttribute("aria-pressed", "true");
+  renderAlbum(btn.dataset.f);
+});
+
+const light = document.getElementById("light");
+function openLight(p) {
+  document.getElementById("light-img").src = photoUrl(p.src);
+  document.getElementById("light-img").alt = "Foto da Gaby";
+  document.getElementById("light-say").textContent = p.text;
+  light.hidden = false;
+}
+document.getElementById("light-x").onclick = () => { light.hidden = true; };
+light.addEventListener("click", (e) => { if (e.target === light) light.hidden = true; });
+document.addEventListener("keydown", (e) => { if (e.key === "Escape") light.hidden = true; });
+
+const reasonsRoot = document.getElementById("reasons");
+reasons.forEach((text, i) => {
+  const el = document.createElement("button");
+  el.type = "button";
+  el.className = "reason";
+  el.innerHTML = '<div class="front"><span class="num"></span><p>Toca para ler a razão ' + (i + 1) + '.</p></div><div class="back"></div>';
+  el.querySelector(".num").textContent = String(i + 1);
+  el.querySelector(".back").textContent = text;
+  el.addEventListener("click", () => el.classList.toggle("open"));
+  reasonsRoot.appendChild(el);
+});
+
+const VALE_KEY = "gaby-vales";
+const savedVales = new Set(JSON.parse(localStorage.getItem(VALE_KEY) || "[]"));
+const valesRoot = document.getElementById("vales");
+vales.forEach((text, i) => {
+  const el = document.createElement("article");
+  el.className = "vale" + (savedVales.has(i) ? " done" : "");
+  el.innerHTML = '<span class="num"></span><p></p><button type="button" class="ghost"></button>';
+  el.querySelector(".num").textContent = String(i + 1);
+  el.querySelector("p").textContent = text;
+  const btn = el.querySelector("button");
+  const paint = () => {
+    const on = savedVales.has(i);
+    el.classList.toggle("done", on);
+    btn.textContent = on ? "Resgatado" : "Resgatar";
+    if (on && !el.querySelector(".stamp")) {
+      const s = document.createElement("div");
+      s.className = "stamp";
+      s.textContent = "PARA A GABY";
+      el.appendChild(s);
+    }
+  };
+  paint();
+  btn.addEventListener("click", () => {
+    if (savedVales.has(i)) savedVales.delete(i);
+    else savedVales.add(i);
+    localStorage.setItem(VALE_KEY, JSON.stringify([...savedVales]));
+    const stamp = el.querySelector(".stamp");
+    if (!savedVales.has(i) && stamp) stamp.remove();
+    paint();
+  });
+  valesRoot.appendChild(el);
+});
+
+let game = null;
+const keys = {};
+window.addEventListener("keydown", (e) => {
+  keys[e.key.toLowerCase()] = true;
+  if (["arrowup", "arrowdown", "arrowleft", "arrowright", " "].includes(e.key.toLowerCase())) e.preventDefault();
+});
+window.addEventListener("keyup", (e) => { keys[e.key.toLowerCase()] = false; });
+
+document.getElementById("dpad").querySelectorAll("button").forEach((btn) => {
+  const set = (on) => { keys[btn.dataset.k] = on; };
+  btn.addEventListener("pointerdown", (e) => { e.preventDefault(); set(true); });
+  btn.addEventListener("pointerup", () => set(false));
+  btn.addEventListener("pointerleave", () => set(false));
+  btn.addEventListener("pointercancel", () => set(false));
+});
+
+function startGame() {
+  if (game || typeof THREE === "undefined") {
+    if (typeof THREE === "undefined") {
+      document.getElementById("game-line").textContent = "O jardim 3D não carregou. O resto do livro continua aqui.";
+    }
+    return;
+  }
+  const canvas = document.getElementById("view");
+  const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+  renderer.outputColorSpace = THREE.SRGBColorSpace;
+  renderer.shadowMap.enabled = true;
+  renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+  renderer.setClearColor(0xf7c6dc, 1);
+
+  const scene = new THREE.Scene();
+  scene.fog = new THREE.Fog(0xf7c6dc, 18, 42);
+  const camera = new THREE.PerspectiveCamera(55, 1, 0.1, 80);
+
+  scene.add(new THREE.AmbientLight(0xfff2f6, 0.55));
+  const hemi = new THREE.HemisphereLight(0xffd0e6, 0xf0b7a0, 0.85);
+  scene.add(hemi);
+  const sun = new THREE.DirectionalLight(0xfff6ea, 1.25);
+  sun.position.set(12, 22, 8);
+  sun.castShadow = true;
+  sun.shadow.mapSize.set(2048, 2048);
+  sun.shadow.camera.near = 1;
+  sun.shadow.camera.far = 50;
+  sun.shadow.camera.left = -24;
+  sun.shadow.camera.right = 24;
+  sun.shadow.camera.top = 24;
+  sun.shadow.camera.bottom = -24;
+  scene.add(sun);
+
+  const ground = new THREE.Mesh(
+    new THREE.CircleGeometry(28, 48),
+    new THREE.MeshStandardMaterial({ color: 0xf3b7cf, roughness: 0.95 })
+  );
+  ground.rotation.x = -Math.PI / 2;
+  ground.receiveShadow = true;
+  scene.add(ground);
+
+  const path = new THREE.Mesh(
+    new THREE.CircleGeometry(7.5, 40),
+    new THREE.MeshStandardMaterial({ color: 0xffe7f1, roughness: 1 })
+  );
+  path.rotation.x = -Math.PI / 2;
+  path.position.y = 0.02;
+  path.receiveShadow = true;
+  scene.add(path);
+
+  function stone(color, rough) {
+    return new THREE.MeshStandardMaterial({ color, roughness: rough });
+  }
+  const castle = new THREE.Group();
+  const wallMat = stone(0xfff6ee, 0.75);
+  const roofMat = stone(0xe24b78, 0.45);
+  const goldMat = new THREE.MeshStandardMaterial({ color: 0xffd56a, metalness: 0.65, roughness: 0.28, emissive: 0x8a5a10, emissiveIntensity: 0.15 });
+
+  function tower(x, z, h) {
+    const g = new THREE.Group();
+    const body = new THREE.Mesh(new THREE.CylinderGeometry(0.85, 0.95, h, 10), wallMat);
+    body.position.y = h / 2;
+    body.castShadow = true;
+    body.receiveShadow = true;
+    const roof = new THREE.Mesh(new THREE.ConeGeometry(1.15, 1.5, 10), roofMat);
+    roof.position.y = h + 0.6;
+    roof.castShadow = true;
+    const tip = new THREE.Mesh(new THREE.SphereGeometry(0.16, 12, 12), goldMat);
+    tip.position.y = h + 1.45;
+    g.add(body, roof, tip);
+    g.position.set(x, 0, z);
+    return g;
+  }
+  castle.add(tower(-3.1, -1.2, 4.2));
+  castle.add(tower(3.1, -1.2, 4.2));
+  castle.add(tower(-2.2, 2.4, 3.2));
+  castle.add(tower(2.2, 2.4, 3.2));
+  const keep = new THREE.Mesh(new THREE.BoxGeometry(3.4, 3.4, 2.6), wallMat);
+  keep.position.set(0, 1.7, 0.2);
+  keep.castShadow = true;
+  keep.receiveShadow = true;
+  castle.add(keep);
+  const roofKeep = new THREE.Mesh(new THREE.ConeGeometry(2.5, 1.8, 4), roofMat);
+  roofKeep.position.set(0, 4.2, 0.2);
+  roofKeep.rotation.y = Math.PI / 4;
+  roofKeep.castShadow = true;
+  castle.add(roofKeep);
+  const door = new THREE.Mesh(new THREE.BoxGeometry(0.9, 1.5, 0.2), new THREE.MeshStandardMaterial({ color: 0x6b3a4a, roughness: 0.6 }));
+  door.position.set(0, 0.75, 1.55);
+  castle.add(door);
+  const glow = new THREE.PointLight(0xffd56a, 0, 8);
+  glow.position.set(0, 1.2, 2.2);
+  castle.add(glow);
+  castle.position.set(0, 0, -6);
+  scene.add(castle);
+
+  const blockers = [{ x: 0, z: -6, r: 3.3 }];
+  function tree(x, z) {
+    const g = new THREE.Group();
+    const trunk = new THREE.Mesh(new THREE.CylinderGeometry(0.16, 0.22, 1.1, 8), stone(0x6b4634, 0.8));
+    trunk.position.y = 0.55;
+    trunk.castShadow = true;
+    const top = new THREE.Mesh(new THREE.SphereGeometry(0.85, 16, 16), stone(0xff8fb6, 0.7));
+    top.position.y = 1.55;
+    top.castShadow = true;
+    g.add(trunk, top);
+    g.position.set(x, 0, z);
+    scene.add(g);
+    blockers.push({ x, z, r: 0.85 });
+  }
+  [[-8, 2], [8, 3], [-11, -8], [11, -7], [-14, 8], [12, 9], [14, 4], [-15, 4], [-12, 16], [9, 15]].forEach(([x, z]) => tree(x, z));
+
+  for (let i = 0; i < 28; i++) {
+    const petal = new THREE.Mesh(
+      new THREE.SphereGeometry(0.08, 6, 6),
+      stone(i % 2 ? 0xfff : 0xff5f9a, 0.5)
+    );
+    const a = Math.random() * Math.PI * 2;
+    const d = 2 + Math.random() * 16;
+    petal.position.set(Math.cos(a) * d, 0.08, Math.sin(a) * d);
+    scene.add(petal);
+  }
+
+  function makeCrown() {
+    const g = new THREE.Group();
+    const band = new THREE.Mesh(new THREE.TorusGeometry(0.28, 0.07, 8, 18), goldMat);
+    band.rotation.x = Math.PI / 2;
+    g.add(band);
+    for (let i = 0; i < 5; i++) {
+      const spike = new THREE.Mesh(new THREE.ConeGeometry(0.07, 0.24, 4), goldMat);
+      const a = (i / 5) * Math.PI * 2;
+      spike.position.set(Math.cos(a) * 0.28, 0.16, Math.sin(a) * 0.28);
+      g.add(spike);
+    }
+    const gem = new THREE.Mesh(new THREE.OctahedronGeometry(0.1), new THREE.MeshStandardMaterial({ color: 0xff4f8b, emissive: 0xff4f8b, emissiveIntensity: 0.4, roughness: 0.3 }));
+    gem.position.y = 0.22;
+    g.add(gem);
+    return g;
+  }
+
+  const spots = [
+    [8, 8], [-8, 7], [13, 1], [-13, 2], [5, -12], [-7, -13],
+    [15, -5], [-15, -6], [0, 13], [11, 13], [-11, 12],
+    [17, 9], [-17, 8], [3, 5], [-16, 14], [18, -1], [-1, 18]
+  ];
+  const crowns = spots.map((s, i) => {
+    const c = makeCrown();
+    c.position.set(s[0], 0.85, s[1]);
+    c.userData.i = i;
+    c.userData.base = 0.85;
+    scene.add(c);
+    return c;
+  });
+
+  const skin = new THREE.MeshStandardMaterial({ color: 0x8d552f, roughness: 0.62 });
+  const hair = new THREE.MeshStandardMaterial({ color: 0x1a120e, roughness: 0.7 });
+  const dressMat = new THREE.MeshStandardMaterial({ color: 0xff6fa3, roughness: 0.42 });
+  const player = new THREE.Group();
+  const dress = new THREE.Mesh(new THREE.ConeGeometry(0.42, 1.05, 10), dressMat);
+  dress.position.y = 0.52;
+  dress.castShadow = true;
+  const head = new THREE.Mesh(new THREE.SphereGeometry(0.26, 20, 20), skin);
+  head.position.y = 1.22;
+  head.castShadow = true;
+  const hairMesh = new THREE.Mesh(new THREE.SphereGeometry(0.29, 20, 20), hair);
+  hairMesh.position.set(0, 1.32, -0.04);
+  hairMesh.scale.y = 0.82;
+  const crown = new THREE.Mesh(new THREE.CylinderGeometry(0.14, 0.18, 0.1, 6), goldMat);
+  crown.position.y = 1.55;
+  player.add(dress, head, hairMesh, crown);
+  player.position.set(0, 0, 11);
+  scene.add(player);
+  camera.position.set(0, 7.2, 20.2);
+
+  const line = document.getElementById("game-line");
+  const countEl = document.getElementById("count");
+  const win = document.getElementById("win");
+  let got = 0;
+  const clock = new THREE.Clock();
+
+  function resize() {
+    const w = canvas.clientWidth || 800;
+    const h = canvas.clientHeight || 480;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / Math.max(h, 1);
+    camera.updateProjectionMatrix();
+  }
+  resize();
+  window.addEventListener("resize", resize);
+
+  function reset() {
+    crowns.forEach((c) => { c.visible = true; });
+    got = 0;
+    countEl.textContent = "0";
+    player.position.set(0, 0, 11);
+    win.hidden = true;
+    glow.intensity = 0;
+    line.textContent = "Anda pelo jardim e apanha as coroas douradas.";
+  }
+  document.getElementById("reset-game").onclick = reset;
+
+  function frame() {
+    let dt = 0.016;
+    try {
+    dt = Math.min(clock.getDelta(), 0.05);
+    const t = clock.elapsedTime;
+    let x = 0, z = 0;
+    if (keys["w"] || keys["arrowup"]) z -= 1;
+    if (keys["s"] || keys["arrowdown"]) z += 1;
+    if (keys["a"] || keys["arrowleft"]) x -= 1;
+    if (keys["d"] || keys["arrowright"]) x += 1;
+    const len = Math.hypot(x, z);
+    if (len > 0 && win.hidden) {
+      x /= len; z /= len;
+      player.position.x += x * 6.2 * dt;
+      player.position.z += z * 6.2 * dt;
+      const target = Math.atan2(x, z);
+      player.rotation.y = THREE.MathUtils.lerp(player.rotation.y, target, 0.18);
+    }
+    const lim = 20;
+    player.position.x = THREE.MathUtils.clamp(player.position.x, -lim, lim);
+    player.position.z = THREE.MathUtils.clamp(player.position.z, -lim, lim);
+    blockers.forEach((b) => {
+      const dx = player.position.x - b.x;
+      const dz = player.position.z - b.z;
+      const d = Math.hypot(dx, dz);
+      if (d < b.r && d > 0.001) {
+        player.position.x = b.x + (dx / d) * b.r;
+        player.position.z = b.z + (dz / d) * b.r;
+      }
+    });
+    dress.position.y = 0.52 + Math.sin(t * 8) * (len > 0 ? 0.04 : 0.01);
+
+    crowns.forEach((c) => {
+      if (!c.visible) return;
+      c.position.y = c.userData.base + Math.sin(t * 2 + c.userData.i) * 0.16;
+      c.rotation.y += dt * 1.2;
+      const dx = c.position.x - player.position.x;
+      const dz = c.position.z - player.position.z;
+      if (dx * dx + dz * dz < 1.15) {
+        c.visible = false;
+        got += 1;
+        countEl.textContent = String(got);
+        line.textContent = crownLines[c.userData.i] || "Uma coroa tua.";
+        if (got >= 17) {
+          win.hidden = false;
+          glow.intensity = 6;
+          line.textContent = "As 17 coroas são tuas. Eu amo-te, Gaby.";
+        }
+      }
+    });
+
+    const camTarget = new THREE.Vector3(player.position.x, 1.2, player.position.z);
+    const desired = new THREE.Vector3(player.position.x, 7.2, player.position.z + 9.2);
+    camera.position.lerp(desired, 0.08);
+    camera.lookAt(camTarget);
+    renderer.render(scene, camera);
+    } catch (err) {
+      line.textContent = "Jardim: " + err.message;
+      return;
+    }
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
+  game = { reset };
+}
+</script>
+</body>
+</html>
